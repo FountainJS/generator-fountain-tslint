@@ -44,15 +44,28 @@ module.exports = fountain.Base.extend({
         );
       } else if (this.props.modules === 'systemjs') {
         this.copyTemplate(
-          'gulp_tasks/scripts.js',
-          'gulp_tasks/scripts.js',
-          { full: true }
+          'gulp_tasks/scripts-full.js',
+          'gulp_tasks/scripts.js'
         );
       } else if (this.props.modules === 'inject') {
         this.replaceInFile(
+          'gulp_tasks/scripts-require.js',
           'gulp_tasks/scripts.js',
-          / {2}return gulp\.src[^\n]*/,
-          { full: false }
+          /const gulp = require\('gulp'\);/
+        );
+        this.replaceInFile(
+          'gulp_tasks/scripts-stream.js',
+          'gulp_tasks/scripts.js',
+          / {2}return gulp\.src[^\n]*/
+        );
+      }
+    },
+
+    tsConf() {
+      if (this.props.modules !== 'systemjs') {
+        this.copyTemplate(
+          'conf/ts.conf.json',
+          'conf/ts.conf.json'
         );
       }
     },
