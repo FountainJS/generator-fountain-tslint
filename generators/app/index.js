@@ -32,12 +32,12 @@ module.exports = fountain.Base.extend({
   writing: {
     wireing() {
       if (this.props.modules === 'webpack') {
-        this.replaceInFile(
+        this.replaceInFileWithTemplate(
           'conf/webpack.conf.js',
           'conf/webpack.conf.js',
           / {2}module: \{/
         );
-        this.replaceInFile(
+        this.replaceInFileWithTemplate(
           'conf/webpack.conf.js',
           'conf/webpack-test.conf.js',
           / {2}module: \{/
@@ -48,12 +48,12 @@ module.exports = fountain.Base.extend({
           'gulp_tasks/scripts.js'
         );
       } else if (this.props.modules === 'inject') {
-        this.replaceInFile(
+        this.replaceInFileWithTemplate(
           'gulp_tasks/scripts-require.js',
           'gulp_tasks/scripts.js',
           /const gulp = require\('gulp'\);/
         );
-        this.replaceInFile(
+        this.replaceInFileWithTemplate(
           'gulp_tasks/scripts-stream.js',
           'gulp_tasks/scripts.js',
           / {2}return gulp\.src[^\n]*/
