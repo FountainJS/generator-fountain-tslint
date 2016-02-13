@@ -71,7 +71,9 @@ module.exports = fountain.Base.extend({
     },
 
     tsd() {
-      this.copyTemplate('tsd.json', 'tsd.json');
+      this.copyTemplate('tsd.json', 'tsd.json', {
+        addToTsd: this.env.addToTsd
+      });
     }
   },
 
