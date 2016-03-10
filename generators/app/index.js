@@ -70,14 +70,14 @@ module.exports = fountain.Base.extend({
       }
     },
 
-    tsd() {
-      this.copyTemplate('tsd.json', 'tsd.json', {
+    typings() {
+      this.copyTemplate('typings.json', 'typings.json', {
         addToTsd: this.env.addToTsd
       });
     }
   },
 
   installing() {
-    this.runInstall('tsd');
+    this.runInstall('typings');
   }
 });

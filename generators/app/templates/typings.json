@@ -1,0 +1,21 @@
+{
+  "ambientDependencies": {
+    "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a",
+  <% if (addToTsd) { -%>
+      <%- addToTsd %>
+  <% } -%>
+  <% if (framework === 'angular1') { -%>
+    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#dc9dabe74a5be62613b17a36053097",
+    "angular-mocks": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular-mocks.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a",
+    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a"
+  <% } -%>
+  <% if (framework === 'angular1') { -%>
+    "react": "github:DefinitelyTyped/DefinitelyTyped/react/react.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a",
+    "react-dom": "github:DefinitelyTyped/DefinitelyTyped/react/react-dom.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a",
+    "react-addons-test-utils": "github:DefinitelyTyped/DefinitelyTyped/react/react-addons-test-utils.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a"
+  <% } -%>
+  <% if (framework === 'angular2') { -%>
+    "angular2": "github:DefinitelyTyped/DefinitelyTyped/angular2/angular2.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a"
+  <% } -%>  
+  }
+}
