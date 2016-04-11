@@ -8,7 +8,7 @@ module.exports = fountain.Base.extend({
 
   configuring: {
     pkg() {
-      var pkg = {
+      const pkg = {
         devDependencies: {
           tslint: '^3.2.1',
           typescript: '^1.7.5'
@@ -16,16 +16,16 @@ module.exports = fountain.Base.extend({
       };
 
       if (this.props.modules === 'webpack') {
-        _.merge(pkg, { devDependencies: { 'tslint-loader': '^2.1.0' } });
+        _.merge(pkg, {devDependencies: {'tslint-loader': '^2.1.0'}});
       } else {
-        _.merge(pkg, { devDependencies: { 'gulp-tslint': '^4.2.2' } });
+        _.merge(pkg, {devDependencies: {'gulp-tslint': '^4.2.2'}});
       }
 
       this.mergeJson('package.json', pkg);
     },
 
     tslint() {
-      this.copyTemplate('conf/tslint.conf.json', 'conf/tslint.conf.json');
+      this.copyTemplate('conf/tslint.conf.json', 'tslint.json');
     }
   },
 
