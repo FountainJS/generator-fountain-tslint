@@ -25,6 +25,7 @@ module.exports = fountain.Base.extend({
     },
 
     tslint() {
+      this.copyTemplate('conf/tslint.conf.json', 'conf/tslint.conf.json');
       this.copyTemplate('conf/tslint.conf.json', 'tslint.json');
     }
   },
