@@ -11,7 +11,8 @@ module.exports = fountain.Base.extend({
       const pkg = {
         devDependencies: {
           tslint: '^3.2.1',
-          typescript: '^1.7.5'
+          typescript: '^1.7.5',
+          typings: '^0.8.1'
         }
       };
 
@@ -78,7 +79,7 @@ module.exports = fountain.Base.extend({
     }
   },
 
-  installing() {
-    this.runInstall('typings');
+  install() {
+    this.runInstall('./node_modules/.bin/typings');
   }
 });
