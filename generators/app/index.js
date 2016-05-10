@@ -2,10 +2,6 @@ const _ = require('lodash');
 const fountain = require('fountain-generator');
 
 module.exports = fountain.Base.extend({
-  prompting() {
-    this.fountainPrompting();
-  },
-
   configuring: {
     pkg() {
       const pkg = {
@@ -16,7 +12,7 @@ module.exports = fountain.Base.extend({
         }
       };
 
-      if (this.props.modules === 'webpack') {
+      if (this.options.modules === 'webpack') {
         _.merge(pkg, {devDependencies: {'tslint-loader': '^2.1.0'}});
       } else {
         _.merge(pkg, {devDependencies: {'gulp-tslint': '^4.2.2'}});
@@ -33,7 +29,7 @@ module.exports = fountain.Base.extend({
 
   writing: {
     wireing() {
-      if (this.props.modules === 'webpack') {
+      if (this.options.modules === 'webpack') {
         this.replaceInFileWithTemplate(
           'conf/webpack.conf.js',
           'conf/webpack.conf.js',
@@ -44,12 +40,12 @@ module.exports = fountain.Base.extend({
           'conf/webpack-test.conf.js',
           / {2}module: \{/
         );
-      } else if (this.props.modules === 'systemjs') {
+      } else if (this.options.modules === 'systemjs') {
         this.copyTemplate(
           'gulp_tasks/scripts-full.js',
           'gulp_tasks/scripts.js'
         );
-      } else if (this.props.modules === 'inject') {
+      } else if (this.options.modules === 'inject') {
         this.replaceInFileWithTemplate(
           'gulp_tasks/scripts-require.js',
           'gulp_tasks/scripts.js',
@@ -64,7 +60,7 @@ module.exports = fountain.Base.extend({
     },
 
     tsConf() {
-      if (this.props.modules !== 'systemjs') {
+      if (this.options.modules !== 'systemjs') {
         this.copyTemplate(
           'conf/ts.conf.json',
           'conf/ts.conf.json'
