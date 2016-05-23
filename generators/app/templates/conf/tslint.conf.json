@@ -46,7 +46,11 @@
     "no-trailing-whitespace": true,
     "no-unused-expression": true,
 <% if (framework === 'react') { -%>
+<% if (sample === 'todoMVC') { -%>
+    "no-unused-variable": false,
+<% } else { -%>
     "no-unused-variable": [true, "react"],
+<% } -%>
 <% } else { -%>
     "no-unused-variable": true,
 <% } -%>
