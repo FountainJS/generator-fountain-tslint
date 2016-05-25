@@ -1,6 +1,6 @@
 {
   "name": "generator-fountain-tslint",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Yeoman 'fountain' generator which handle the TSLint config",
   "homepage": "",
   "repository": "fountainjs/generator-fountain-tslint",
@@ -22,7 +22,7 @@
     "typescript"
   ],
   "dependencies": {
-    "fountain-generator": "^0.4.0",
+    "fountain-generator": "^0.5.0",
     "lodash": "^4.9.0"
   },
   "devDependencies": {
