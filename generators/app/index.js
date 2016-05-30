@@ -8,7 +8,7 @@ module.exports = fountain.Base.extend({
         devDependencies: {
           tslint: '^3.2.1',
           typescript: '^1.7.5',
-          typings: '^0.8.1'
+          typings: '^1.0.4'
         }
       };
 
