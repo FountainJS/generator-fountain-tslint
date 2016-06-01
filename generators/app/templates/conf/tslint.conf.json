@@ -45,14 +45,14 @@
     "trailing-comma": true,
     "no-trailing-whitespace": true,
     "no-unused-expression": true,
-<% if (framework === 'react') { -%>
-<% if (sample === 'todoMVC') { -%>
+<% if (modules === 'inject' && sample === 'todoMVC') { -%>
     "no-unused-variable": false,
 <% } else { -%>
+<% if (framework === 'react') { -%>
     "no-unused-variable": [true, "react"],
-<% } -%>
 <% } else { -%>
     "no-unused-variable": true,
+<% } -%>
 <% } -%>
     "no-unreachable": true,
     "no-use-before-declare": true,
