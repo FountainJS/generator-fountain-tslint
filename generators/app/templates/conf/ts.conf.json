@@ -8,5 +8,21 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false
-  }
+  },
+  "filesGlob": [
+    "**/*.ts",
+    "**/*.tsx",
+    "!typings/**",
+<% if (modules === 'webpack') { -%>
+    "!node_modules/**"
+<% } else { -%>
+    "!node_modules/**",
+<% } -%>
+<% if (modules === 'inject') { -%>
+    "!bower_components/**"
+<% } -%>
+<% if (modules === 'systemjs') { -%>
+    "!jspm_packages/**"
+<% } -%>
+  ]
 }
