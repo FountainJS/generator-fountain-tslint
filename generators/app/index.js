@@ -44,7 +44,7 @@ module.exports = fountain.Base.extend({
           'gulp_tasks/scripts-full.js',
           'gulp_tasks/scripts.js'
         );
-      } else if (this.options.modules === 'inject') {
+      } else {
         this.replaceInFileWithTemplate(
           'gulp_tasks/scripts-require.js',
           'gulp_tasks/scripts.js',
