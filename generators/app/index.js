@@ -59,12 +59,10 @@ module.exports = fountain.Base.extend({
     },
 
     tsConf() {
-      if (this.options.modules !== 'systemjs') {
-        this.copyTemplate(
-          'conf/ts.conf.json',
-          'conf/ts.conf.json'
-        );
-      }
+      this.copyTemplate(
+        'conf/ts.conf.json',
+        'tsconfig.json'
+      );
     },
 
     typings() {

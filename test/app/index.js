@@ -24,7 +24,7 @@ test.before(() => {
 test.beforeEach(() => {
   context.mergeJson['package.json'] = null;
   context.copyTemplate['package.json'] = null;
-  context.copyTemplate['conf/ts.conf.json'] = null;
+  context.copyTemplate['tsconfig.json'] = null;
   context.copyTemplate['typings.json'] = null;
   context.copyTemplate['gulp_tasks/scripts.js'] = null;
 });
@@ -74,14 +74,9 @@ test(`wireing(): copy 'gulp_tasks/scripts.js' when modules is webpack`, t => {
   t.true(context.copyTemplate['gulp_tasks/scripts.js'].length > 0);
 });
 
-test(`copy 'conf/ts.conf.json' when modules is webpack`, t => {
+test(`copy 'tsconfig.json' when modules is webpack`, t => {
   TestUtils.call(context, 'writing.tsConf', {modules: 'webpack'});
-  t.true(context.copyTemplate['conf/ts.conf.json'].length > 0);
-});
-
-test(`copy 'conf/ts.conf.json' when modules is systemhs`, t => {
-  TestUtils.call(context, 'writing.tsConf', {modules: 'systemjs'});
-  t.is(context.copyTemplate['conf/ts.conf.json'], null);
+  t.true(context.copyTemplate['tsconfig.json'].length > 0);
 });
 
 test(`copy 'typings.json'`, t => {
