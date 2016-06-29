@@ -9,20 +9,23 @@
     "removeComments": false,
     "noImplicitAny": false
   },
+  "compileOnSave": false,
+  "exclude": [
+<% if (modules === 'webpack') { -%>
+    "node_modules"
+<% } else { -%>
+    "node_modules",
+<% } -%>
+<% if (modules === 'inject') { -%>
+    "bower_components"
+<% } -%>
+<% if (modules === 'systemjs') { -%>
+    "jspm_packages"
+<% } -%>
+  ],
   "filesGlob": [
     "**/*.ts",
     "**/*.tsx",
-    "!typings/**",
-<% if (modules === 'webpack') { -%>
-    "!node_modules/**"
-<% } else { -%>
-    "!node_modules/**",
-<% } -%>
-<% if (modules === 'inject') { -%>
-    "!bower_components/**"
-<% } -%>
-<% if (modules === 'systemjs') { -%>
-    "!jspm_packages/**"
-<% } -%>
+    "!typings/**"
   ]
 }
