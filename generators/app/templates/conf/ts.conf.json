@@ -9,20 +9,17 @@
     "removeComments": false,
     "noImplicitAny": false
   },
+  "compileOnSave": false,
   "filesGlob": [
-    "**/*.ts",
-    "**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     "!typings/**",
-<% if (modules === 'webpack') { -%>
-    "!node_modules/**"
-<% } else { -%>
-    "!node_modules/**",
-<% } -%>
 <% if (modules === 'inject') { -%>
-    "!bower_components/**"
+    "!bower_components/**",
 <% } -%>
 <% if (modules === 'systemjs') { -%>
-    "!jspm_packages/**"
+    "!jspm_packages/**",
 <% } -%>
+    "!node_modules/**"
   ]
 }

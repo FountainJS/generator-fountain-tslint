@@ -5,31 +5,30 @@
 <% if (router === 'uirouter') { -%>
     "angular-ui-router": "github:DefinitelyTyped/DefinitelyTyped/angular-ui-router/angular-ui-router.d.ts#41f31600a1bff1adef3c76642183b20ec97aa81e",
 <% } -%>
-    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#dc9dabe74a5be62613b17a36053097",
+    "angular": "registry:dt/angular#1.5.0+20160627105203",
     "angular-mocks": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular-mocks.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a",
-    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a"
+    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a",
 <% } -%>
 <% if (framework === 'react') { -%>
     "axios": "github:DefinitelyTyped/DefinitelyTyped/axios/axios.d.ts#bcd5761826eb567876c197ccc6a87c4d05731054",
     "react": "github:DefinitelyTyped/DefinitelyTyped/react/react.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a",
     "react-dom": "github:DefinitelyTyped/DefinitelyTyped/react/react-dom.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a",
     "react-addons-test-utils": "github:DefinitelyTyped/DefinitelyTyped/react/react-addons-test-utils.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a",
-    "classnames": "registry:dt/classnames#0.0.0+20160316155526"
+    "classnames": "registry:dt/classnames#0.0.0+20160316155526",
 <% } -%>
 <% if (framework === 'angular2') { -%>
 <% if (modules === 'webpack') { -%>
     "require": "registry:dt/require#2.1.20+20160316155526",
 <% } -%>
-    "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504"
 <% } -%>
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504"
 <% if (framework === 'react') { -%>
   },
   "dependencies": {
 <% if (router === 'router') { -%>
-    "react-router": "registry:npm/react-router#2.0.0+20160214194820",
+    "react-router": "registry:npm/react-router#2.4.0+20160628165748",
 <% } -%>
-    "react-redux": "registry:npm/react-redux#4.4.0+20160207114942",
-    "redux": "registry:npm/redux#3.0.6+20160214194820"
+    "react-redux": "registry:npm/react-redux#4.4.0+20160207114942"
   }
 <% } else { -%>
   }
