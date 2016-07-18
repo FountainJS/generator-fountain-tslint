@@ -16,10 +16,8 @@
     "react-addons-test-utils": "github:DefinitelyTyped/DefinitelyTyped/react/react-addons-test-utils.d.ts#dc9dabe74a5be62613b17a3605309783a12ff28a",
     "classnames": "registry:dt/classnames#0.0.0+20160316155526",
 <% } -%>
-<% if (framework === 'angular2') { -%>
-<% if (modules === 'webpack') { -%>
+<% if (framework !== 'react' && modules === 'webpack') { -%>
     "require": "registry:dt/require#2.1.20+20160316155526",
-<% } -%>
 <% } -%>
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504"
 <% if (framework === 'react') { -%>
