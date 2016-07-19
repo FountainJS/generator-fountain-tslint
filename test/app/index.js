@@ -35,9 +35,20 @@ test('Configure package.json when modules is webpack', t => {
   t.deepEqual(context.mergeJson['package.json'], expected);
 });
 
-test('Configure package.json when modules is systmejs', t => {
+test('Configure package.json when modules is systemjs', t => {
   const expected = _.merge({}, pkg, {devDependencies: {'gulp-tslint': '^4.2.2'}});
   TestUtils.call(context, 'configuring.pkg', {modules: 'systemjs'});
+  t.deepEqual(context.mergeJson['package.json'], expected);
+});
+
+test('Configure package.json when framework is angular2 and modules is systemjs', t => {
+  const expected = _.merge({}, pkg, {
+    devDependencies: {
+      'gulp-tslint': '^4.2.2',
+      'codelyzer': '^0.0.25'
+    }
+  });
+  TestUtils.call(context, 'configuring.pkg', {framework: 'angular2', modules: 'systemjs'});
   t.deepEqual(context.mergeJson['package.json'], expected);
 });
 

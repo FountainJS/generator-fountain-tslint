@@ -18,6 +18,10 @@ module.exports = fountain.Base.extend({
         _.merge(pkg, {devDependencies: {'gulp-tslint': '^4.2.2'}});
       }
 
+      if (this.options.framework === 'angular2') {
+        _.merge(pkg, {devDependencies: {codelyzer: '^0.0.25'}});
+      }
+
       this.mergeJson('package.json', pkg);
     },
 
