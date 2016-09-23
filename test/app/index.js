@@ -10,7 +10,7 @@ let context;
 const pkg = {
   devDependencies: {
     tslint: '^3.2.1',
-    typescript: '^1.7.5',
+    typescript: '^2.0.2',
     typings: '^1.0.4'
   }
 };
