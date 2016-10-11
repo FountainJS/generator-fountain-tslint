@@ -57,12 +57,11 @@ test('Copy tslint.json', t => {
   t.true(context.copyTemplate['tslint.json'].length > 0);
 });
 
-test('wireing(): call replaceInFileWithTemplate twice when modules is webpack', () => {
+test('wireing(): not call replaceInFileWithTemplate when modules is webpack', () => {
   context.replaceInFileWithTemplate = () => {};
   const spy = chai.spy.on(context, 'replaceInFileWithTemplate');
   TestUtils.call(context, 'writing.wireing', {modules: 'webpack'});
-  expect(spy).to.have.been.called.with('conf/webpack.conf.js', 'conf/webpack.conf.js');
-  expect(spy).to.have.been.called.with('conf/webpack.conf.js', 'conf/webpack-test.conf.js');
+  expect(spy).not.to.have.been.called();
 });
 
 test('wireing(): call copyTemplate twice when modules is systemjs', t => {

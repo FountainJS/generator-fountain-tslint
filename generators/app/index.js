@@ -32,23 +32,12 @@ module.exports = fountain.Base.extend({
 
   writing: {
     wireing() {
-      if (this.options.modules === 'webpack') {
-        this.replaceInFileWithTemplate(
-          'conf/webpack.conf.js',
-          'conf/webpack.conf.js',
-          / {2}module: \{/
-        );
-        this.replaceInFileWithTemplate(
-          'conf/webpack.conf.js',
-          'conf/webpack-test.conf.js',
-          / {2}module: \{/
-        );
-      } else if (this.options.modules === 'systemjs') {
+      if (this.options.modules === 'systemjs') {
         this.copyTemplate(
           'gulp_tasks/scripts-full.js',
           'gulp_tasks/scripts.js'
         );
-      } else {
+      } else if (this.options.modules === 'inject') {
         this.replaceInFileWithTemplate(
           'gulp_tasks/scripts-require.js',
           'gulp_tasks/scripts.js',
