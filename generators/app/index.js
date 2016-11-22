@@ -6,8 +6,10 @@ module.exports = fountain.Base.extend({
     pkg() {
       const pkg = {
         devDependencies: {
-          tslint: '^3.2.1',
-          typescript: '^2.0.2'
+          'tslint': '^3.2.1',
+          'typescript': '^2.0.10',
+          '@types/es6-shim': '^0.31.32',
+          '@types/jasmine': '^2.5.38'
         }
       };
 
