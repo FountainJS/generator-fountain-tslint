@@ -10,8 +10,9 @@ let context;
 const pkg = {
   devDependencies: {
     tslint: '^3.2.1',
-    typescript: '^2.0.2',
-    typings: '^1.0.4'
+    typescript: '^2.0.10',
+    '@types/es6-shim': '^0.31.32',
+    '@types/jasmine': '^2.5.38'
   }
 };
 
@@ -25,7 +26,6 @@ test.beforeEach(() => {
   context.mergeJson['package.json'] = null;
   context.copyTemplate['package.json'] = null;
   context.copyTemplate['tsconfig.json'] = null;
-  context.copyTemplate['typings.json'] = null;
   context.copyTemplate['gulp_tasks/scripts.js'] = null;
 });
 
@@ -87,16 +87,4 @@ test(`wireing(): copy 'gulp_tasks/scripts.js' when modules is webpack`, t => {
 test(`copy 'tsconfig.json' when modules is webpack`, t => {
   TestUtils.call(context, 'writing.tsConf', {modules: 'webpack'});
   t.true(context.copyTemplate['tsconfig.json'].length > 0);
-});
-
-test(`copy 'typings.json'`, t => {
-  TestUtils.call(context, 'writing.typings');
-  t.true(context.copyTemplate['typings.json'].length > 0);
-});
-
-test('Call runInstall', () => {
-  context.runInstall = () => {};
-  const spy = chai.spy.on(context, 'runInstall');
-  TestUtils.call(context, 'install');
-  expect(spy).to.have.been.called.with('./node_modules/.bin/typings');
 });

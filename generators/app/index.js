@@ -6,9 +6,10 @@ module.exports = fountain.Base.extend({
     pkg() {
       const pkg = {
         devDependencies: {
-          tslint: '^3.2.1',
-          typescript: '^2.0.2',
-          typings: '^1.0.4'
+          'tslint': '^3.2.1',
+          'typescript': '^2.0.10',
+          '@types/es6-shim': '^0.31.32',
+          '@types/jasmine': '^2.5.38'
         }
       };
 
@@ -56,14 +57,6 @@ module.exports = fountain.Base.extend({
         'conf/ts.conf.json',
         'tsconfig.json'
       );
-    },
-
-    typings() {
-      this.copyTemplate('typings.json', 'typings.json');
     }
-  },
-
-  install() {
-    this.runInstall('./node_modules/.bin/typings');
   }
 });
