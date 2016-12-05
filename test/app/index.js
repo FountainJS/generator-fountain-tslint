@@ -10,7 +10,8 @@ let context;
 const pkg = {
   devDependencies: {
     tslint: '^3.2.1',
-    typescript: '^2.0.10',
+    typescript: '^2.1.0',
+    '@types/node': '^0.0.2',
     '@types/es6-shim': '^0.31.32',
     '@types/jasmine': '^2.5.38'
   }
@@ -44,8 +45,8 @@ test('Configure package.json when modules is systemjs', t => {
 test('Configure package.json when framework is angular2 and modules is systemjs', t => {
   const expected = _.merge({}, pkg, {
     devDependencies: {
-      'gulp-tslint': '^4.2.2',
-      'codelyzer': '^0.0.25'
+      'gulp-tslint': '^4.2.2'
+      // 'codelyzer': '^2.0.0-beta.1'
     }
   });
   TestUtils.call(context, 'configuring.pkg', {framework: 'angular2', modules: 'systemjs'});
