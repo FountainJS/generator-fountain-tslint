@@ -8,6 +8,9 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false,
+<% if (modules === 'inject') { -%>
+    "outFile": "./merged_typescript_files.js",
+<% } -%>
     "typeRoots": ["node_modules/@types/"],
     "types": [
 <% if (framework === 'angular1') { -%>
