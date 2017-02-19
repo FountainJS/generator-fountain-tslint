@@ -1,3 +1,4 @@
+const path = require('path');
 const chai = require('chai');
 const expect = chai.expect;
 const spies = require('chai-spies');
@@ -9,18 +10,18 @@ const TestUtils = require('fountain-generator').TestUtils;
 let context;
 const pkg = {
   devDependencies: {
-    'tslint': '^4.1.1',
+    'tslint': '^4.4.2',
     'typescript': '^2.1.0',
-    '@types/node': '^0.0.2',
+    '@types/node': '^7.0.5',
     '@types/es6-shim': '^0.31.32',
-    '@types/jasmine': '^2.5.38'
+    '@types/jasmine': '^2.5.43'
   }
 };
 
 test.before(() => {
   context = TestUtils.mock('app');
   require('../../generators/app/index');
-  process.chdir('../../');
+  process.chdir(path.resolve(__dirname, '../../'));
 });
 
 test.beforeEach(() => {
@@ -31,13 +32,13 @@ test.beforeEach(() => {
 });
 
 test('Configure package.json when modules is webpack', t => {
-  const expected = _.merge({}, pkg, {devDependencies: {'tslint-loader': '^3.3.0'}});
+  const expected = _.merge({}, pkg, {devDependencies: {'tslint-loader': '^3.4.2'}});
   TestUtils.call(context, 'configuring.pkg', {modules: 'webpack'});
   t.deepEqual(context.mergeJson['package.json'], expected);
 });
 
 test('Configure package.json when modules is systemjs', t => {
-  const expected = _.merge({}, pkg, {devDependencies: {'gulp-tslint': '^7.0.1'}});
+  const expected = _.merge({}, pkg, {devDependencies: {'gulp-tslint': '^7.1.0'}});
   TestUtils.call(context, 'configuring.pkg', {modules: 'systemjs'});
   t.deepEqual(context.mergeJson['package.json'], expected);
 });
@@ -45,7 +46,7 @@ test('Configure package.json when modules is systemjs', t => {
 test('Configure package.json when framework is angular2 and modules is systemjs', t => {
   const expected = _.merge({}, pkg, {
     devDependencies: {
-      'gulp-tslint': '^7.0.1'
+      'gulp-tslint': '^7.1.0'
       // 'codelyzer': '^2.0.0-beta.1'
     }
   });
