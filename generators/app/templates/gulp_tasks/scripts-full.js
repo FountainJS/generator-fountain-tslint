@@ -8,7 +8,9 @@ gulp.task('scripts', scripts);
 
 function scripts() {
   return gulp.src(conf.path.src('**/*.<%- framework === 'react' ? 'tsx' : 'ts' %>'))
-    .pipe(tslint())
-    .pipe(tslint.report('verbose'))
+    .pipe(tslint({
+      formatter: 'verbose'
+    }))
+    .pipe(tslint.report())
     .pipe(browserSync.stream());
 }
