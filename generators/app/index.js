@@ -6,18 +6,18 @@ module.exports = fountain.Base.extend({
     pkg() {
       const pkg = {
         devDependencies: {
-          'tslint': '^4.1.1',
+          'tslint': '^4.4.2',
           'typescript': '^2.1.0',
-          '@types/node': '^0.0.2',
+          '@types/node': '^7.0.5',
           '@types/es6-shim': '^0.31.32',
-          '@types/jasmine': '^2.5.38'
+          '@types/jasmine': '^2.5.43'
         }
       };
 
       if (this.options.modules === 'webpack') {
-        _.merge(pkg, {devDependencies: {'tslint-loader': '^3.3.0'}});
+        _.merge(pkg, {devDependencies: {'tslint-loader': '^3.4.2'}});
       } else {
-        _.merge(pkg, {devDependencies: {'gulp-tslint': '^7.0.1'}});
+        _.merge(pkg, {devDependencies: {'gulp-tslint': '^7.1.0'}});
       }
 
       // if (this.options.framework === 'angular2') {
